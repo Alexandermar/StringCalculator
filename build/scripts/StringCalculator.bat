@@ -1,7 +1,7 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  TDD startup script for Windows
+@rem  StringCalculator startup script for Windows
 @rem
 @rem ##########################################################################
 
@@ -13,7 +13,7 @@ if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
 
-@rem Add default JVM options here. You can also use JAVA_OPTS and TDD_OPTS to pass JVM options to this script.
+@rem Add default JVM options here. You can also use JAVA_OPTS and STRING_CALCULATOR_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
@@ -63,19 +63,19 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\TDD.jar;%APP_HOME%\lib\joda-time-2.9.9.jar
+set CLASSPATH=%APP_HOME%\lib\StringCalculator.jar;%APP_HOME%\lib\joda-time-2.9.9.jar
 
-@rem Execute TDD
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TDD_OPTS%  -classpath "%CLASSPATH%" is.ru.stringcalc.Calculator %CMD_LINE_ARGS%
+@rem Execute StringCalculator
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %STRING_CALCULATOR_OPTS%  -classpath "%CLASSPATH%" is.ru.stringcalc.Calculator %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
 if "%ERRORLEVEL%"=="0" goto mainEnd
 
 :fail
-rem Set variable TDD_EXIT_CONSOLE if you need the _script_ return code instead of
+rem Set variable STRING_CALCULATOR_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
-if  not "" == "%TDD_EXIT_CONSOLE%" exit 1
+if  not "" == "%STRING_CALCULATOR_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd
