@@ -23,10 +23,38 @@ public class Calculator{
 	}
 	
 	private static int sum(String [] numbers){
+		
+		checkNegative(numbers);
 		int total = 0;
+		
 			for(String number : numbers){
+				int indexNumber = toInt(number);
+				
 				total += toInt(number);
 			}
+			
 			return total;
 	}
+	
+	private static void checkNegative(String [] numbers){
+
+    String negatives = "";
+    boolean isNegative = false;
+    for(String number : numbers){
+        if(toInt(number) < 0){
+
+            if(!isNegative){
+                isNegative = true;
+                negatives = negatives + number;
+            }
+            else{
+                negatives = negatives + "," + number;
+            }
+        }
+    }
+    if(isNegative){
+      throw new IllegalArgumentException("Negatives are not allwoed: " + negatives);
+    }
+  }
+	
 }
